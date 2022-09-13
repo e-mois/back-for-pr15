@@ -3,7 +3,6 @@ const NotAuthError = require('../errors/NotAuthError');
 
 const auth = (req, res, next) => {
   const token = req.cookies.access_token;
-  console.log(req.cookies);
 
   if (!token) {
     next(new NotAuthError('Необходима авторизация'));
